@@ -6,24 +6,8 @@
     left: 0px;
     right: 0px;
     z-index: 30;
-    border-bottom: 5px solid rgb(140, 96, 34);
+    border-bottom: px solid rgb(140, 96, 34);
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-}
-
-
-.itemcontainer {
-    width: 120px;
-    text-align: center;
-    margin-top: auto;
-    margin-bottom: auto;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 10pt;
-    color: rgb(0, 0, 0);
-    background-color: #ffc928; 
-    padding: 1px 1px;
-    border-radius: 8px;  
-    display: inline-block; 
-    margin: 10px; 
 }

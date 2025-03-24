@@ -11,12 +11,9 @@ const benefits = [
 export default function Benefits() {
   return (
     <div className="min-h-screen bg-gray-100 p-10">
-      {/* Benefits Header */}
       <div className="border-2 border-blue-600 bg-blue-200 p-5 rounded-md shadow-md w-fit mb-6">
         <h1 className="text-3xl font-bold text-blue-700">Benefits of Camping</h1>
       </div>
-
-      {/* Benefits Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {benefits.map((benefit, index) => (
           <div key={index} className="bg-white p-4 shadow-lg rounded-lg border border-gray-300 text-center">

@@ -12,15 +12,23 @@ export const authOptions:AuthOptions = {
             },
             async authorize(credentials, req) {
 
-              if(!credentials) return null
+            if(!credentials) return null
 
-              const user = await userLogIn(credentials.email, credentials.password)
+            const res = await userLogIn(credentials.email, credentials.password)
               
-              if (user) {
-                return user
-              } else {
-                return null
+            if (res.success) {
+              const { user, token } = res;
+
+              return {
+                id: user._id,
+                email: user.email,
+                name: user.name,
+                role: user.role,
+                token: user.token,
               }
+            } else { 
+                return null
+            }
               
             }
           })
@@ -34,5 +42,10 @@ export const authOptions:AuthOptions = {
             session.user = token as any
             return session
         },
+    },
+
+    pages: {
+      newUser: '/'
     }
+
 }

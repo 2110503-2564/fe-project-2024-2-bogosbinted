@@ -22,3 +22,8 @@ export interface BookingItem {
     bookDate: string;
     email: string;
   }
+
+export interface Benefit {
+    title: string;
+    description: string;
+  }

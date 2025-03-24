@@ -24,8 +24,8 @@ export default function BookingList() {
 
   if (!session) {
     return (
-      <div className="text-red-500 text-lg my-4">
-        You must be logged in to view your bookings.
+      <div className="text-red-500 md-1/2 text-8xl my-4">
+          LOG THE FUCK INNNNNNNNNNNNNNN!!
       </div>
     );
   }
