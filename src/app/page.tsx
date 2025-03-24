@@ -18,6 +18,16 @@ export default function Home() {
           </Link>
         </div>
 
+        <div className="bg-white p-6 border-4 border-blue-500 rounded-lg shadow-lg w-full md:w-2/5">
+          <h1 className="text-4xl font-bold text-blue-700">What are the benefits for coming to this camp?</h1>
+          <p className="text-gray-600 mt-3">How you can benefit from this camp?</p>
+
+          <Link href="/benefits">
+            <button className="mt-5 px-6 py-3 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600">
+              View Benefits
+            </button>
+          </Link>
+        </div>
       </div>
     </main>
   );

@@ -7,6 +7,7 @@ const activities = [
   { name: "Kayaking", img: "/imgs/kayaking.jpg", desc: "Paddle through serene waters and enjoy the view." },
   { name: "Campfire Cooking", img: "/imgs/campfire.jpg", desc: "Enjoy delicious meals cooked over an open fire." },
   { name: "Swimming", img: "/imgs/swimming.jpg", desc: "Cool off in natural lakes and rivers." },
+  { name: "Slacklining", img: "/imgs/slacklining.jpg", desc: "Test your balance and have fun on a slackline." },
 ];
 
 export default function Activities() {
