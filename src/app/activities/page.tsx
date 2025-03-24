@@ -7,13 +7,13 @@ const activities = [
   { name: "Kayaking", img: "/imgs/kayaking.jpg", desc: "Paddle through serene waters and enjoy the view." },
   { name: "Campfire Cooking", img: "/imgs/campfire.jpg", desc: "Enjoy delicious meals cooked over an open fire." },
   { name: "Swimming", img: "/imgs/swimming.jpg", desc: "Cool off in natural lakes and rivers." },
-  { name: "Slacklining", img: "/imgs/slacklining.jpg", desc: "Test your balance and have fun on a slackline." },
 ];
 
 export default function Activities() {
   return (
     <div className="min-h-screen bg-gray-100 p-10">
       
+
       <div className="border-2 border-green-600 bg-green-200 p-5 rounded-md shadow-md w-fit mb-6">
         <h1 className="text-3xl font-bold text-green-700">Camp Activities</h1>
       </div>
