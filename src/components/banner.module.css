@@ -1,0 +1,30 @@
+.banner {
+    display: block;
+    padding: 5px;
+    margin: 0;
+    width: 100vw;
+    height: 50vh;
+    position:relative;
+}
+
+.bannerText {
+    position:relative;
+    color:white;
+    top: 100px;
+    z-index: 20;
+    text-align: center;
+    text-shadow: 
+        -1px -1px 0 black,  
+         1px -1px 0 black,  
+        -1px  2px 0 black,  
+         1px  1px 0 black;
+}
+
+.welcomeText {
+    text-shadow: 
+        -1px -1px 0 black,  
+         1px -1px 0 black,  
+        -1px  2px 0 black,  
+         1px  1px 0 black;
+}
+  
