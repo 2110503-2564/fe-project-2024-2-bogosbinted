@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { DatePicker } from "@mui/x-date-pickers";
 import { LocalizationProvider as MUILocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -11,17 +10,20 @@ export default function DateReserve({
   onNameChange,
   onContactChange,
   onDateChange,
-  onVenueChange,
+  onCampChange,
+  onEmailChange
 }: {
   onNameChange: (value: string) => void;
   onContactChange: (value: string) => void;
   onDateChange: (value: Dayjs | null) => void;
-  onVenueChange: (value: string) => void;
+  onCampChange: (value: string) => void;
+  onEmailChange: (value: string) => void;
 }) {
   const [nameLastname, setNameLastname] = useState<string>("");
   const [tel, setTel] = useState<string>("");
   const [bookdate, setBookDate] = useState<Dayjs | null>(null);
-  const [venue, setVenue] = useState<string>("Bloom");
+  const [campground, setCampground] = useState<string>("it my life cafe x camp");
+  const [email, setEmail] = useState<string>("");
 
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = event.target.value;
@@ -35,6 +37,12 @@ export default function DateReserve({
     onContactChange(newValue); 
   };
 
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = event.target.value;
+    setEmail(newValue);
+    onEmailChange(newValue); 
+  };
+
   return (
     <div className="bg-slate-100 rounded-lg space-x-5 space-y-2 w-fit px-10 py-5 flex flex-col">
       <label htmlFor="Name-Lastname">Name-Lastname</label>
@@ -44,6 +52,15 @@ export default function DateReserve({
         variant="standard"
         value={nameLastname}
         onChange={handleNameChange}
+      />
+
+      <label htmlFor="Email">Email</label>
+      <TextField
+        name="email"
+        id="email"
+        variant="standard"
+        value={email}
+        onChange={handleEmailChange}
       />
 
       <label htmlFor="Contact-Number">Contact-Number</label>
@@ -69,19 +86,20 @@ export default function DateReserve({
 
         <Select
           variant="standard"
-          name="venue"
-          id="venue"
+          name="camp"
+          id="camp"
           className="h-[2em] w-[200px]"
-          value={venue}
+          value={campground}
           onChange={(e) => {
             const newValue = e.target.value;
-            setVenue(newValue);
-            onVenueChange(newValue);
+            setCampground(newValue);
+            onCampChange(newValue);
           }}
         >
-          <MenuItem value="Bloom">The Bloom Pavilion</MenuItem>
-          <MenuItem value="Spark">Spark Space</MenuItem>
-          <MenuItem value="GrandTable">The Grand Table</MenuItem>
+          <MenuItem value="it my life cafe x camp">it my life cafe x camp</MenuItem>
+          <MenuItem value="taketime">Take Time Nature</MenuItem>
+          <MenuItem value="macamping">Ma-Camping & Resort in Ra-yong</MenuItem>
+          <MenuItem value="patoi">Patoi House</MenuItem>
         </Select>
       </div>
     </div>
