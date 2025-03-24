@@ -9,38 +9,38 @@ import { BookingItem } from "../../../interface"
 
 export default function Booking(){
     const [bookingDate, setBookingDate] = useState<Dayjs | null>(null)
-    const [venue, setVenue] = useState('Bloom')
+    const [campground, setCampground] = useState('it my life cafe x camp')
     const [name, setName] = useState("")  
     const [contactNumber, setContactNumber] = useState("")
-    
+    const [email, setEmail] = useState("")
     const dispatch = useDispatch<AppDispatch>()
     
     const makeBooking = () =>{
-        if(venue && name && contactNumber && bookingDate){
+        if(campground && email && name && contactNumber && bookingDate){
             const item:BookingItem={
                 nameLastname: name,
                 tel: contactNumber,
-                venue: venue,
+                email: email,
+                campground: campground,
                 bookDate: dayjs(bookingDate).format("DD/MM/YYYY")
             }
             dispatch(addBooking(item))
-            
+
         }
     }
 
     return(
         <main className="w-[100%] flex flex-col items-center space-y-4">
-            <div className="text-xl font-meduim">New Booking</div>
             <div>
                 <DateReserve 
                 onNameChange={(value:string)=>{setName(value)}}
                 onContactChange={(value:string)=>setContactNumber(value)}
                 onDateChange={(value:Dayjs|null)=>{setBookingDate(value)}}
-                onVenueChange={(value:string)=>{setVenue(value)}}
-                
+                onCampChange={(value:string)=>{setCampground(value)}}
+                onEmailChange={(value:string)=>{setEmail(value)}}
                 />
             </div>
-            <button name="Book Venue" className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-2
+            <button name="Book Venue" className="block rounded-md bg-gray-600 hover:bg-gray-800 px-3 py-2
             shadow-sm text-white" onClick={makeBooking}>Book Venue</button>
         </main>
     )

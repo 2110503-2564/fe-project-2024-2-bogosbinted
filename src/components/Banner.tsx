@@ -7,7 +7,7 @@ import { useSession } from 'next-auth/react'
 export default function Banner() {
     const { data:session } = useSession()
     const router = useRouter()
-
+    console.log("Session user:", session?.user);
     return (
         <div className={styles.banner}>
             <Image src={'/imgs/banner.jpg'}
@@ -15,8 +15,8 @@ export default function Banner() {
             fill={true}
             objectFit='cover'/>
             <div className={styles.bannerText}>
-                <h1 className='text-7xl font-medium'>EVERGLOW CAMP</h1>
-                <h4 className='text-2xl font-serif'>Time Camping isn’t time spent, it’s invested.</h4>
+                <h1 className='text-8xl font-medium'>GLORP CAMP</h1>
+                <h4 className='text-2xl font-serif'>go outside and touch grass.</h4>
             </div>
             {
                 session ? ( <div className="z-30 absolute top-20 left-1/2 transform -translate-x-1/2 font-semibold text-white text-xl" >

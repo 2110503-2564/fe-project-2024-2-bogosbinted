@@ -20,4 +20,5 @@ export interface BookingItem {
     tel: string;
     campground: string;
     bookDate: string;
+    email: string;
   }
