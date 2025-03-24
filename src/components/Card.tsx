@@ -19,5 +19,3 @@ export default function Card ({ venueName, imgSrc }:{ venueName:string, imgSrc:s
     </InteractiveCard>
   );
 };
-
-
