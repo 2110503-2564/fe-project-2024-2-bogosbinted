@@ -45,7 +45,7 @@ export default function BookingList() {
     setEditingId(booking._id);
     setEditForm({
       campground: booking.campground.name,
-      bookDate: booking.bookDate.slice(0, 10), // format YYYY-MM-DD
+      bookDate: booking.bookDate.slice(0, 10), 
     });
   };
 
