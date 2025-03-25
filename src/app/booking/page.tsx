@@ -52,9 +52,9 @@ export default function Booking(){
                 setEmail("");
                 setBookingDate(null);
 
-            } catch (err) {
+            } catch (err: any) {
               console.error("Booking error:", err);
-              alert("Booking failed.");
+              alert(err.message);
             }
           }
     }
