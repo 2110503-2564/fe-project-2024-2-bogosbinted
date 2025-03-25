@@ -11,37 +11,24 @@ export default function DateReserve({
   onContactChange,
   onDateChange,
   onCampChange,
-  onEmailChange
+  onEmailChange,
+  valueName,
+  valueTel,
+  valueEmail,
+  valueCamp,
+  valueDate,
 }: {
   onNameChange: (value: string) => void;
   onContactChange: (value: string) => void;
   onDateChange: (value: Dayjs | null) => void;
   onCampChange: (value: string) => void;
   onEmailChange: (value: string) => void;
+  valueName: string;
+  valueTel: string;
+  valueEmail: string;
+  valueCamp: string;
+  valueDate: Dayjs | null;
 }) {
-  const [nameLastname, setNameLastname] = useState<string>("");
-  const [tel, setTel] = useState<string>("");
-  const [bookdate, setBookDate] = useState<Dayjs | null>(null);
-  const [campground, setCampground] = useState<string>("it my life cafe x camp");
-  const [email, setEmail] = useState<string>("");
-
-  const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = event.target.value;
-    setNameLastname(newValue);
-    onNameChange(newValue); 
-  };
-
-  const handleContactChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = event.target.value;
-    setTel(newValue);
-    onContactChange(newValue); 
-  };
-
-  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = event.target.value;
-    setEmail(newValue);
-    onEmailChange(newValue); 
-  };
 
   return (
     <div className="bg-slate-100 rounded-lg space-x-5 space-y-2 w-fit px-10 py-5 flex flex-col">
@@ -50,8 +37,8 @@ export default function DateReserve({
         name="Name-Lastname"
         id="Name-Lastname"
         variant="standard"
-        value={nameLastname}
-        onChange={handleNameChange}
+        value={valueName}
+        onChange={(e) => onNameChange(e.target.value)}
       />
 
       <label htmlFor="Email">Email</label>
@@ -59,8 +46,8 @@ export default function DateReserve({
         name="email"
         id="email"
         variant="standard"
-        value={email}
-        onChange={handleEmailChange}
+        value={valueEmail}
+        onChange={(e) => onEmailChange(e.target.value)}
       />
 
       <label htmlFor="Contact-Number">Contact-Number</label>
@@ -68,19 +55,16 @@ export default function DateReserve({
         name="Contact-Number"
         id="Contact-Number"
         variant="standard"
-        value={tel}
-        onChange={handleContactChange}
+        value={valueTel}
+        onChange={(e) => onContactChange(e.target.value)}
       />
 
       <div className="flex flex-row justify-center space-x-5">
         <MUILocalizationProvider dateAdapter={AdapterDayjs}>
           <DatePicker
             className="bg-white"
-            value={bookdate}
-            onChange={(value) => {
-              setBookDate(value);
-              onDateChange(value); 
-            }}
+            value={valueDate}
+            onChange={(value) => onDateChange(value)}
           />
         </MUILocalizationProvider>
 
@@ -89,12 +73,8 @@ export default function DateReserve({
           name="camp"
           id="camp"
           className="h-[2em] w-[200px]"
-          value={campground}
-          onChange={(e) => {
-            const newValue = e.target.value;
-            setCampground(newValue);
-            onCampChange(newValue);
-          }}
+          value={valueCamp}
+          onChange={(e) => onCampChange(e.target.value)}
         >
           <MenuItem value="it my life cafe x camp">it my life cafe x camp</MenuItem>
           <MenuItem value="taketime">Take Time Nature</MenuItem>

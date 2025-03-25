@@ -24,7 +24,7 @@ export const authOptions:AuthOptions = {
                 email: user.email,
                 name: user.name,
                 role: user.role,
-                token: user.token,
+                token: token,
               }
             } else { 
                 return null
@@ -43,7 +43,6 @@ export const authOptions:AuthOptions = {
             return session
         },
     },
-
     pages: {
       newUser: '/'
     }
