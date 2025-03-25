@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { registerUser } from '@/libs/registerUser'; // adjust path as needed
+import { registerUser } from '@/libs/registerUser'; 
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -28,7 +28,7 @@ export default function RegisterPage() {
     if (!result.success) {
       setError(result.error);
     } else {
-      router.push('/api/auth/signin');
+      router.push('/api/auth/signin?callbackUrl=/');
     }
   };
 
